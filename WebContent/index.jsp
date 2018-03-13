@@ -36,7 +36,7 @@
 	%>
 	<table width="510" border="1">
 		<tr>
-			<td><%=vo.getNo()%></td>
+			<td><%=vo.getIndex()%></td>
 			<td><%=vo.getName()%></td>
 			<td><%=vo.getCurDate()%></td>
 			<td><a href="/guestbook/deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>

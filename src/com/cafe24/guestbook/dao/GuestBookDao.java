@@ -54,14 +54,12 @@ public class GuestBookDao {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-
+	
 		try {
 			conn = getConnection();
-			// insert into guestbook values(null, '최종규', '1234', '만나서 반갑습니다.', now());
 			String sql = "insert into guestbook values(null, ?, ?, ?, now())";
 
 			pstmt = conn.prepareStatement(sql);
-
 			pstmt.setString(1, vo.getName());
 			pstmt.setString(2, vo.getPassword());
 			pstmt.setString(3, vo.getContent());
@@ -109,9 +107,10 @@ public class GuestBookDao {
 				String password = rs.getString(3);
 				String content = rs.getString(4);
 				String curDate = rs.getString(5);
-
 				GuestBookVo vo = new GuestBookVo();
+
 				vo.setNo(no);
+				vo.setIndex((long) list.size() + 1);
 				vo.setName(name);
 				vo.setPassword(password);
 				vo.setContent(content);

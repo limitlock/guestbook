@@ -6,6 +6,15 @@ public class GuestBookVo {
 	private String password;
 	private String content;
 	private String curDate;
+	private Long index;
+
+	public Long getIndex() {
+		return index;
+	}
+
+	public void setIndex(Long index) {
+		this.index = index;
+	}
 
 	public Long getNo() {
 		return no;
